@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>loci</title>
+    <script src="http://maps.google.com/maps?file=api&amp;v=2.77&amp;key=ABQIAAAAq-GFQu-HnB-I3_0ynAWScBT5FyvVJbWbtPVh1L_sBrOX1dwKvRQbyHz1XhMg-F4q3-Hh98fOXISMYQ"
+      type="text/javascript"></script>
+    <script type="text/javascript">
+
+    //<![CDATA[
+
+    function load() {
+      if (GBrowserIsCompatible()) {
+		var map = new GMap2(document.getElementById("map"));
+		var center = new GLatLng(35.9549, -83.9285);
+		map.setCenter(center, 15, G_NORMAL_MAP);
+		map.addControl(new GLargeMapControl());
+		map.addControl(new GMapTypeControl());
+		var request = GXmlHttp.create();
+
+
+		var marker = new GMarker(center, {draggable: true});
+
+		GEvent.addListener(marker, "dragstart", function() {
+		  map.closeInfoWindow();
+		  });
+
+		GEvent.addListener(marker, "dragend", function() {
+		 //get cords and write them to a text file
+		 var lat = marker.getPoint().lat();
+		 var lng = marker.getPoint().lng();
+		 var url = "write.php";
+		 url = url + "?lat=" + lat;
+		 url = url + "&lng=" + lng;
+		 
+		 var url2 = "search.php";
+		 url2 = url2 + "?lat=" + lat;
+		 url2 = url2 + "&lng=" + lng;
+		
+		//so this is what all the ajax hype is about
+		request.open("POST", url, true);
+		request.onreadystatechange = function() {
+		  if (request.readyState == 4) {
+		    //alert(request.responseText);
+		  }
+		}
+		request.send(null);
+		
+		side.location.href = url2;
+		});
+
+		map.addOverlay(marker);
+
+      }
+    }
+
+    //]]>
+    </script>
+  </head>
+  <body onload="load()" onunload="GUnload()">
+    <div id="map" style="width: 800px; height: 600px"></div>
+	<iframe src="search.php?lat=35.9549&lng=-83.9285" id="side" name="side" scrolling="yes"
+	marginwidth="0" marginheight="0" frameborder="1"
+	style=" position:relative;top:-600px;left:800px;width:300px; height:600px;"></iframe>
+
+  </body>
+</html>

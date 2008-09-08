@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "loci", "loci.csproj", "{D4BCDBF5-C426-41B5-AACE-4FBA28AAEE23}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		WindowsOnly|Any CPU = WindowsOnly|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4BCDBF5-C426-41B5-AACE-4FBA28AAEE23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4BCDBF5-C426-41B5-AACE-4FBA28AAEE23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4BCDBF5-C426-41B5-AACE-4FBA28AAEE23}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D4BCDBF5-C426-41B5-AACE-4FBA28AAEE23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4BCDBF5-C426-41B5-AACE-4FBA28AAEE23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4BCDBF5-C426-41B5-AACE-4FBA28AAEE23}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D4BCDBF5-C426-41B5-AACE-4FBA28AAEE23}.WindowsOnly|Any CPU.ActiveCfg = WindowsOnly|Any CPU
+		{D4BCDBF5-C426-41B5-AACE-4FBA28AAEE23}.WindowsOnly|Any CPU.Build.0 = WindowsOnly|Any CPU
+		{D4BCDBF5-C426-41B5-AACE-4FBA28AAEE23}.WindowsOnly|Any CPU.Deploy.0 = WindowsOnly|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
